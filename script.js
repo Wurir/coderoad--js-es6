@@ -1,37 +1,52 @@
-// ARGUMENTS KEYWORD
+const button1 = document.createElement('button')
 
-const showAllArguments = function(){
-    console.log(arguments) // built in fn to show all arguments
+button1.innerText = 'Btn1'
+
+const button1ClickHandler = function(){
+    console.log(this) // this wskazuje na miejsce wywolania funkcji, czyli: <button1>
 }
 
-showAllArguments(1, 'Mateusz', {})
+button1.addEventListener('click', button1ClickHandler)
 
+document.body.appendChild(button1)
 
-// to nie zadziała i wyskoczy ReferenceError
-const showAllArgumentsArrow = () => {
-    console.log(arguments)
+// Bind
+
+const button2 = document.createElement('button')
+
+button2.innerText = 'Btn2'
+
+const button2ClickHandler = function(){
+    console.log(this) 
 }
 
-// CONSTRUCTOR FUNCTIONS
+const button2ClickHandlerBound = button2ClickHandler.bind(this) // zwracam funkcje z zapisanym kontekstem this na window
 
-const Greeter = function(name) {
-    this.name = name
-}
+button2.addEventListener('click', button2ClickHandlerBound)
 
-Greeter.prototype.sayHello = function(){
-    console.log('Hello ' + this.name)
-}
+document.body.appendChild(button2)
 
-const greeter1 = new Greeter('Mateusz')
-greeter1.sayHello()
+// przyklad - Bind 'liniowo'
 
+const button3 = document.createElement('button')
 
-// Arrow fn cannot be constructor bcuz of lexical scope 'this'
-const GreeterArrow = (name) => {
-    this.name = name
-}
+button3.innerText = 'Btn3'
 
-    // this will throw TypeError: Cannot set property 'sayHello' of undefined
-// GreeterArrow.prototype.sayHello = function() {
-//     console.log('Hello ' + this.name)
-// }
+button3.addEventListener('click', function(){
+    console.log(this)
+}.bind(this)) // to samo co z btn2 ale bardziej "liniowo"
+
+document.body.appendChild(button3)
+
+// arrow fn
+
+const button4 = document.createElement('button')
+
+button4.innerText = 'Btn4'
+
+const button4ClickHandler = () => console.log(this) // funkcja strzalkowa zapamietuje kontekst dla this z miejsca deklaracji, 
+// w tym przykladzie bedzie to globalny scope (window)
+
+button4.addEventListener('click', button4ClickHandler)
+
+document.body.appendChild(button4)
