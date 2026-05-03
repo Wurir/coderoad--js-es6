@@ -15,3 +15,6 @@ const person = {
 }
 
 sayHello.call(person) // funkcja .call() przyjmuje nowy kontekt dla this
+const boundSayHello = sayHello.bind(person) // .bind() przyjmuje kontekts dla this i zwraca nowa funkcje
+
+boundSayHello()
