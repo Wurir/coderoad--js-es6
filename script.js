@@ -1,6 +1,6 @@
 const button1 = document.createElement('button')
 
-button1.innerText = 'Btn1'
+button1.innerText = 'Regular fn'
 
 const button1ClickHandler = function(){
     console.log(this) // this wskazuje na miejsce wywolania funkcji, czyli: <button1>
@@ -14,7 +14,7 @@ document.body.appendChild(button1)
 
 const button2 = document.createElement('button')
 
-button2.innerText = 'Btn2'
+button2.innerText = 'Regular fn bound'
 
 const button2ClickHandler = function(){
     console.log(this) 
@@ -30,7 +30,7 @@ document.body.appendChild(button2)
 
 const button3 = document.createElement('button')
 
-button3.innerText = 'Btn3'
+button3.innerText = 'Regular fn bound inline'
 
 button3.addEventListener('click', function(){
     console.log(this)
@@ -42,7 +42,7 @@ document.body.appendChild(button3)
 
 const button4 = document.createElement('button')
 
-button4.innerText = 'Btn4'
+button4.innerText = 'Arrow fn'
 
 const button4ClickHandler = () => console.log(this) // funkcja strzalkowa zapamietuje kontekst dla this z miejsca deklaracji, 
 // w tym przykladzie bedzie to globalny scope (window)
