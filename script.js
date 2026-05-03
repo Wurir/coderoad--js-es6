@@ -1,5 +1,5 @@
-const sayHello = function(){
-    console.log('Hello ' + this.firstName + ' ' + this.lastName + '!')
+const sayHello = function(hello = 'Hello ', endmark = '!'){
+    console.log(hello + this.firstName + ' ' + this.lastName + endmark)
 }
 
 const me = {
@@ -14,7 +14,9 @@ const person = {
     lastName: 'Kotowicz',
 }
 
-sayHello.call(person) // funkcja .call() przyjmuje nowy kontekt dla this
+sayHello.call(person, 'Czesc', '!!!') // funkcja .call() przyjmuje nowy kontekt dla this. Podajemy argumenty po obiekcie
 const boundSayHello = sayHello.bind(person) // .bind() przyjmuje kontekts dla this i zwraca nowa funkcje
 
 boundSayHello()
+
+sayHello.apply(person, ['Czesc ', '!!!']) // działą tak samo jak .call, rozni sie jedynie przyjmowaniem argumentow, do apply dodajemy tablice z arg
