@@ -1,22 +1,27 @@
-const sayHello = function(hello = 'Hello ', endmark = '!'){
-    console.log(hello + this.firstName + ' ' + this.lastName + endmark)
+// only one expression in function body
+const add = function(a, b){
+    return a + b
 }
 
-const me = {
-    firstName: 'Bartek',
-    lastName: 'Nazwisko',
-    sayHello: sayHello
-}
-me.sayHello()
-
-const person = {
-    firstName: 'Ala',
-    lastName: 'Kotowicz',
+//more than expression in function body
+const validateAndAdd = function(a, b){
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        throw new Error('Both args must be numbers')
+    }
+    return a + b
 }
 
-sayHello.call(person, 'Czesc', '!!!') // funkcja .call() przyjmuje nowy kontekt dla this. Podajemy argumenty po obiekcie
-const boundSayHello = sayHello.bind(person) // .bind() przyjmuje kontekts dla this i zwraca nowa funkcje
+const addArrow = (a, b) => a + b
 
-boundSayHello()
+// RETURNING SIMPLE VALUE:
 
-sayHello.apply(person, ['Czesc ', '!!!']) // działą tak samo jak .call, rozni sie jedynie przyjmowaniem argumentow, do apply dodajemy tablice z arg
+// regular function
+
+const returnX = function(x){
+    return x
+}
+
+// arrow function
+
+const returnXArrow1 = (x) => x 
+const returnXArrow2 = x => x //with 1 arg () are useless
