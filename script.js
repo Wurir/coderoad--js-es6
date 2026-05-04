@@ -1,11 +1,11 @@
-const myOwnForEach = function (array, callback) {
+const myOwnForEach = function (array, callback, thisArg) {
 
     for (let i = 0; i < array.length; i++) {
-        const element = names[i]
+        const element = array[i]
         const index = i
-        const array = names
+        const originalArray = names
 
-        callback(element, index, array)
+        callback.call(thisArg, element, index, originalArray)
     }
 }
 
@@ -23,3 +23,4 @@ names.forEach(greeter)
 myOwnForEach(names, greeter)
 
 names.forEach(greeter, {myName: 'Bartek from "thisArg"'})
+myOwnForEach(names, greeter, {myName: 'Bartek from "thisArg"'})
