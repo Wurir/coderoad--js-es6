@@ -18,9 +18,21 @@ const greeter = function (name, index, array) {
     console.log(`Hello ${name}, I\'m ${this.myName}.`)
 }
 
-names.forEach(greeter)
+// names.forEach(greeter)
 
-myOwnForEach(names, greeter)
+// myOwnForEach(names, greeter)
 
-names.forEach(greeter, {myName: 'Bartek from "thisArg"'})
-myOwnForEach(names, greeter, {myName: 'Bartek from "thisArg"'})
+// names.forEach(greeter, {myName: 'Bartek from "thisArg"'})
+// myOwnForEach(names, greeter, {myName: 'Bartek from "thisArg"'})
+
+const greeterArrow = (name, index, array) => {
+    // console.log(this)
+    console.log(`Hello ${name}, I\'m ${this.myName}.`)
+}
+
+names.forEach(greeterArrow)
+
+myOwnForEach(names, greeterArrow)
+
+names.forEach(greeterArrow, {myName: 'Bartek from "thisArg"'})
+myOwnForEach(names, greeterArrow, {myName: 'Bartek from "thisArg"'})
