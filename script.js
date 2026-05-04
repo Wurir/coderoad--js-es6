@@ -13,6 +13,9 @@ const names = ['Ala', 'Ola', 'Ela']
 
 const myName = 'Bartek'
 
-names.forEach(function(name, index, array){
-    console.log(`Hello ${name}, I\'m ${myName}.`)
-})
+names.forEach(
+    function(name, index, array){
+        console.log(this)
+    // console.log(`Hello ${name}, I\'m ${myName}.`)
+}, {} // second argument as context for 'this'
+)
