@@ -1,38 +1,23 @@
-const myOwnForEach = function (array, callback, thisArg) {
-
-    for (let i = 0; i < array.length; i++) {
-        const element = array[i]
-        const index = i
-        const originalArray = names
-
-        callback.call(thisArg, element, index, originalArray)
-    }
+const task1 = {
+    text: 'Wynieś śmieci',
+    isCompleted: false,
 }
 
-const names = ['Ala', 'Ola', 'Ela']
+const newTask1 = {
+    text: task1.text,
+    isCompleted : task1.isCompleted,
+    date: new Date()
+} // nieprzjemny sposob
+console.log(newTask1);
 
-window.myName = 'Bartek from window'
 
-const greeter = function (name, index, array) {
-    // console.log(this)
-    console.log(`Hello ${name}, I\'m ${this.myName}.`)
-}
+const newTaskAssign = Object.assign(
+    {}, // podaje pusty obiekt do ktorego zostana przypisan wartosci
+    task1, // podaje obiekt, ktory wyladuje w obiekcie podanym na poczatku
+    {date: new Date()} // tutaj tez podaje obiekt z wartoscia, ktora zostanie dodana do nowo utworzoneg obiektu
+)
+console.log(newTaskAssign);
 
-// names.forEach(greeter)
+console.log(task1 === newTask1); // false
+console.log(task1 === newTaskAssign); // false
 
-// myOwnForEach(names, greeter)
-
-// names.forEach(greeter, {myName: 'Bartek from "thisArg"'})
-// myOwnForEach(names, greeter, {myName: 'Bartek from "thisArg"'})
-
-const greeterArrow = (name, index, array) => {
-    // console.log(this)
-    console.log(`Hello ${name}, I\'m ${this.myName}.`)
-}
-
-names.forEach(greeterArrow)
-
-myOwnForEach(names, greeterArrow)
-
-names.forEach(greeterArrow, {myName: 'Bartek from "thisArg"'})
-myOwnForEach(names, greeterArrow, {myName: 'Bartek from "thisArg"'})
