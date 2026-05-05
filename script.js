@@ -21,3 +21,10 @@ console.log(newTaskAssign);
 console.log(task1 === newTask1); // false
 console.log(task1 === newTaskAssign); // false
 
+const newTaskSpread = { ...task1, date: new Date().getFullYear(), isCompleted: true}
+// najwygodniejszy sposob do tworzenia i modyfikacji obiektow, ES6
+console.log(newTaskSpread);
+
+console.log(task1 === newTaskSpread); // false
+
+
