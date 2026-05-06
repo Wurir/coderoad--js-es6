@@ -10,6 +10,10 @@ Counter.prototype.dec = function(){
     this.number = this.number - 1
 }
 
+Counter.prototype.showNumber = function(){
+    console.log(this.number)
+}
+
 const counter1 = new Counter()
 
 class CounterClass{
@@ -23,6 +27,10 @@ class CounterClass{
 
     dec(){
         this.number = this.number - 1
+    }
+
+    showNumber(){
+        console.log(this.number)
     }
 }
 
