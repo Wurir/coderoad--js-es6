@@ -1,43 +1,14 @@
-const Counter = function(initialNumber = 0){
-    this.number = initialNumber
+class Counter {
+
 }
 
-Counter.prototype.inc = function(){
-    this.number = this.number + 1
-}
+const counter1 = new Counter() // mozna zdefiniowac klase bez cnstructor
 
-Counter.prototype.dec = function(){
-    this.number = this.number - 1
-}
 
-Counter.prototype.showNumber = function(){
-    console.log(this.number)
-}
-
-const counter1 = new Counter()
-console.log(typeof Counter) //function 
-
-class CounterClass{
-    constructor(initialNumber){
-        this.number = initialNumber
-    }
+class Counter2 {
+    number = 0
 
     inc(){
         this.number = this.number + 1
     }
-
-    dec(){
-        this.number = this.number - 1
-    }
-
-    showNumber(){
-        console.log(this.number)
-    }
-}
-
-const counter2 = new CounterClass()
-
-console.log(typeof CounterClass) //function
-
-// class mozna nadpisac. Counter zostal przypisany do const wiec jest przed tym chroniony
-// CounterClass = null
+} // to tez zadziala, ale nie jest poprawnym JS
