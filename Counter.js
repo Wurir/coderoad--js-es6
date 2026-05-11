@@ -1,14 +1,22 @@
 class Counter {
-
-}
-
-const counter1 = new Counter() // mozna zdefiniowac klase bez cnstructor
-
-
-class Counter2 {
-    number = 0
+    constructor(initialNumber = 0) {
+        this.number = initialNumber
+    }
 
     inc(){
-        this.number = this.number + 1
+        this.number++
     }
-} // to tez zadziala, ale nie jest poprawnym JS
+}
+
+class DecreasingCounter extends Counter{
+    constructor(){
+        super()
+    }
+
+    dec(){
+        this.number--
+    }
+}
+
+const counter1 = new Counter()
+const counter2 = new DecreasingCounter()
