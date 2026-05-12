@@ -1,22 +1,18 @@
-class Counter {
-    constructor(initialNumber = 0) {
-        this.number = initialNumber
-    }
+// Object Literal
 
-    inc(){
-        this.number++
-    }
-}
+const square1 = {
+    color: 'red',
+    container: document.body,
+    render: function(){
+        this.container.innerHTML = ''
+        
+        const div = document.createElement('div')
+        div.style.backgroundColor = this.color
+        div.style.width = '100px'
+        div.style.height = '100px'
 
-class DecreasingCounter extends Counter{
-    constructor(){
-        super()
-    }
-
-    dec(){
-        this.number--
+        this.container.appendChild(div)
     }
 }
 
-const counter1 = new Counter()
-const counter2 = new DecreasingCounter()
+square1.render()
