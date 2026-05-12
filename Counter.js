@@ -35,3 +35,26 @@ square2.render = function () {
 }
 
 square2.render()
+
+
+// Factory function
+
+const makeSquare = function (color, container) {
+    return {
+        color: color,
+        container: container,
+        render: function () {
+            this.container.innerHTML = ''
+
+            const div = document.createElement('div')
+            div.style.backgroundColor = this.color
+            div.style.width = '100px'
+            div.style.height = '100px'
+
+            this.container.appendChild(div)
+        }
+    }
+}
+
+const square3 = makeSquare('blue', document.querySelector('.square-3'))
+square3.render()
