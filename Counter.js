@@ -58,3 +58,27 @@ const makeSquare = function (color, container) {
 
 const square3 = makeSquare('blue', document.querySelector('.square-3'))
 square3.render()
+
+
+// Constructor functions
+
+const Square = function (color, container) {
+    this.color = color,
+    this.container = container
+}
+
+Square.prototype.render = function () {
+        this.container.innerHTML = ''
+
+        const div = document.createElement('div')
+        div.style.backgroundColor = this.color
+        div.style.width = '100px'
+        div.style.height = '100px'
+
+        this.container.appendChild(div)
+   
+}
+
+const square4 = new Square('black', document.querySelector('.square-4'))
+
+square4.render()
