@@ -64,10 +64,35 @@ square3.render()
 
 const Square = function (color, container) {
     this.color = color,
-    this.container = container
+        this.container = container
 }
 
 Square.prototype.render = function () {
+    this.container.innerHTML = ''
+
+    const div = document.createElement('div')
+    div.style.backgroundColor = this.color
+    div.style.width = '100px'
+    div.style.height = '100px'
+
+    this.container.appendChild(div)
+
+}
+
+const square4 = new Square('black', document.querySelector('.square-4'))
+
+square4.render()
+
+
+// Class
+
+const SquareClass = class {
+    constructor(color, container) {
+        this.color = color,
+            this.container = container
+    }
+
+    render() {
         this.container.innerHTML = ''
 
         const div = document.createElement('div')
@@ -76,9 +101,10 @@ Square.prototype.render = function () {
         div.style.height = '100px'
 
         this.container.appendChild(div)
-   
+
+    }
 }
 
-const square4 = new Square('black', document.querySelector('.square-4'))
+const square5 = new SquareClass('gray', document.querySelector('.square-5'))
 
-square4.render()
+square5.render()
