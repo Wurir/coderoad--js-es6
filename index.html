@@ -12,54 +12,7 @@
 
 <body>
 
-    <script>
-
-        const mathModule = () => {
-            console.log('Math module runs!')
-            const add = (a, b) => a + b
-
-            const substract = (a, b) => a - b
-
-            return {
-                add: add,
-                substract: substract,
-                default: add
-            }
-        }
-
-        const indexModule = () => {
-            const container = importModule('mathModule')
-
-            const add = container.default
-            const addNamed = container.add
-            const substract = container.substract
-
-            console.log(addNamed(2, 2));
-            console.log(add(1, 2))
-            console.log(substract(2, 2));
-        }
-
-        const importModule = (moduleName) => {
-            const container = modulesContainer[moduleName]
-            
-            if (container) return container
-
-            const module = modules[moduleName]
-
-            modulesContainer[moduleName] = module()
-
-            return modulesContainer[moduleName]
-        }
-
-        const modules = {
-            mathModule: mathModule,
-            indexModule: indexModule
-        }
-
-        const modulesContainer = {}
-
-        importModule('indexModule')
-    </script>
+    <script type="module" src="./index.js"></script>
 </body>
 
 </html>
