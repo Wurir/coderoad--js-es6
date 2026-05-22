@@ -1,27 +1,33 @@
-var x = 2
-var y = 4
+'use strict'
 
-var a = '2'
-var b = '4'
+var cat1 = {
+    name: 'Fluffy',
+    age: 3,
+    'strings can be property names': 'Bye',
+    123 : 123,
+}
 
-console.log(x + y); // 6
-console.log(a + b); // '24'
+// var 123 = 'Hello'
 
-console.log(Number(x) + Number(y)); // 6
-console.log(Number(a) + Number(b)); // 6
+console.log(cat1.name); //Fluffy
+console.log(cat1.age); //3
+console.log(cat1['strings can be property names']) //Bye
+
+var stringPropertyName = 'strings can be property names'
+console.log(cat1.stringPropertyName); // Bye
+
+console.log(cat1[123]); //123
+console.log(cat1['123']); //123
+
+console.log(cat1);
 
 
-console.log(x - y); // -2
-console.log(a - b); // -2
-console.log(x - 'hello'); //NaN
+console.log('---------------------------');
 
 
-console.log(x * y); // 8
-console.log(a * b) // 8
-console.log(x * 'hello'); //NaN
+var cat2 = {}
 
-console.log(x / y); // 0.5
-console.log(a / b); // 0.5
+cat2.name = 'Puszek'
+cat2.age = 12
 
-console.log(x % y); // 2
-console.log(a % b); // 0
+console.log(cat2);
