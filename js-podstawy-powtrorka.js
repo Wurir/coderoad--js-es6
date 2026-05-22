@@ -1,8 +1,5 @@
-console.log('Hello')
+'use strict'
 
-console.log(console)
-
-console.log(console.log)
-
-var hello = 'Hello'
-console.log(hello)
+x = 5 
+//Reference error: x is not defined
+// działalo by bez 'use strict'
