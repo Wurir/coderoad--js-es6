@@ -1,12 +1,17 @@
 'use strict'
 
-var me = {
-    firstName: 'Bartek',
-    lastName: 'Bogdanowicz',
-    car: {
+var firstName = 'Bartek'
+var lastName = 'Bogdanowicz'
+
+var car = {
         brand: 'Toyota',
         model: 'Avensis',
-    },
+    }
+
+var me = {
+    firstName: firstName,
+    lastName: lastName,
+    car: car
 }
 
 me.name = me.firstName + ' ' + me.lastName
