@@ -1,26 +1,50 @@
 'use strict'
 
-var func1 = console.log
-var result1 = console.log('Hello!')
+var x = 1
+var y = 2
 
-console.log(func1)
-console.log(result1)
-
-var x = 5
-var y = 10
-
-// add becomes a variable accessible in global scope
-function add(x, y) {
-    return x + y
+if (x === y) {
+    console.log('Prawda!')
+} else {
+    console.log('Fałsz!')
 }
 
-var func2 = add
-var result2 = add(1, 3)
+if (x !== y) {
+    console.log('Prawda - x NIE jest równy y!')
+} else {
+    console.log('Fałsz - x jest równy y!')
+}
 
-console.log(func2)
-console.log(result2)
+var string = 'hello'
+var emptyString = ''
 
-// second argument is not defined
-// so y is undefined
-// and undefined + something === NaN
-console.log(add(5)) // NaN
+if (string) {
+    console.log('Prawda!')
+} else {
+    console.log('Fałsz!')
+}
+
+if (emptyString) {
+    console.log('Prawda!')
+} else {
+    console.log('Fałsz!')
+}
+
+// add(0, 0) === 0
+// add(0) === 0
+// add() === 0
+// add(5) === 5
+
+function add(a, b) {
+    console.log('a: ', a)
+    console.log('b: ', b)
+
+    if(a === undefined){
+        a = 0
+    }
+    if(b === undefined){
+        b = 0
+    }
+
+    return Number(a) + Number(b)
+}
