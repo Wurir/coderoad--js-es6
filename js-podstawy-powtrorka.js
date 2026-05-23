@@ -1,50 +1,22 @@
 'use strict'
 
-var x = 1
-var y = 2
+console.log('before alert')
 
-if (x === y) {
-    console.log('Prawda!')
-} else {
-    console.log('Fałsz!')
-}
+var alertResult = alert('Hello alert!')
 
-if (x !== y) {
-    console.log('Prawda - x NIE jest równy y!')
-} else {
-    console.log('Fałsz - x jest równy y!')
-}
+console.log('after alert', alertResult)
 
-var string = 'hello'
-var emptyString = ''
+console.log('before confirm')
 
-if (string) {
-    console.log('Prawda!')
-} else {
-    console.log('Fałsz!')
-}
+var confirmResult = confirm('Hello confirm!')
 
-if (emptyString) {
-    console.log('Prawda!')
-} else {
-    console.log('Fałsz!')
-}
+console.log('after confirm', confirmResult)
 
-// add(0, 0) === 0
-// add(0) === 0
-// add() === 0
-// add(5) === 5
+console.log('before prompt')
 
-function add(a, b) {
-    console.log('a: ', a)
-    console.log('b: ', b)
+var promptResult = prompt(
+    'Hello prompt!',
+    'Placeholder'
+)
 
-    if(a === undefined){
-        a = 0
-    }
-    if(b === undefined){
-        b = 0
-    }
-
-    return Number(a) + Number(b)
-}
+console.log('after prompt', promptResult)
