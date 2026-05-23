@@ -1,20 +1,18 @@
 'use strict'
 
-var names = ['Ala', 'Ola', 'Ela']
-
-var objNames = {
-    0: 'Ala',
-    1: 'Ola',
-    2: 'Ela',
+var me = {
+    firstName: 'Bartek',
+    lastName: 'Bogdanowicz',
 }
 
+var person1 = {
+    firstName: 'Alicja',
+    lastName: 'Kotowicz',
+}
 
-console.log(names);
-console.log(names.length); // 3
-console.log(names[0]); // Ala
+var people = [me, person1]
 
-names[3] = 'Iza'
-console.log(names.length); // 4
+person1.firstName = 'Ala'
 
-console.log(objNames);
-console.log(objNames.length); // undefined
+console.log(people);
+ 
