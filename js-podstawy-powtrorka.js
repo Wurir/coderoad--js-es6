@@ -1,26 +1,20 @@
 'use strict'
 
-var firstName = 'Bartek'
-var lastName = 'Bogdanowicz'
+var names = ['Ala', 'Ola', 'Ela']
 
-var car = {
-        brand: 'Toyota',
-        model: 'Avensis',
-    }
-
-var me = {
-    firstName: firstName,
-    lastName: lastName,
-    car: car
+var objNames = {
+    0: 'Ala',
+    1: 'Ola',
+    2: 'Ela',
 }
 
-me.name = me.firstName + ' ' + me.lastName
 
-firstName = 'Maciek' // strings are passed by value
+console.log(names);
+console.log(names.length); // 3
+console.log(names[0]); // Ala
 
-car.model = 'Corolla' // zmieniam wartosc w referencji
+names[3] = 'Iza'
+console.log(names.length); // 4
 
-console.log(me);
-console.log(me.car.brand); //Toyota
-console.log(me.car.model) //Avensis => w linii 21 zmienione na Corolla
-console.log(me.name); // Bartosz Bogdanowicz
+console.log(objNames);
+console.log(objNames.length); // undefined
