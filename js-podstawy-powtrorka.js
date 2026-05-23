@@ -1,31 +1,20 @@
 'use strict'
 
-;(function () {
+var text = 'Hello, times: '
+var endIncrement = 3
 
-    function add(a, b) {
-        return a + b
-    }
+for (var i = 0; i < endIncrement; i = i + 1){
+    console.log(text + (i + 1))
+}
 
-    var userInput1 = prompt('Please type a number!')
-    var number1 = Number(userInput1)
+for (var j = 0; j < endIncrement; j++){
+    console.log(text + (j + 1))
+}
 
-    var userInput2 = prompt('Please type second number!')
-    var number2 = Number(userInput2)
+for (var d = endIncrement; d > 0; d = d - 1){
+    console.log(text + d)
+}
 
-    var sum = add(number1, number2)
-
-    if (sum) {
-
-        alert('The result is: ' + sum)
-
-    } else {
-
-        if (sum === 0) {
-            alert('The result is: ' + sum)
-        } else {
-            alert('Sorry, you provided not a number!')
-        }
-
-    }
-
-})()
+for (var decrement = endIncrement; decrement > 0; decrement--){
+    console.log(text + decrement)
+}
