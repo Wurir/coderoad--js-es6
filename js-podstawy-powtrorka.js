@@ -1,27 +1,55 @@
 'use strict'
 
+// function declaration / statement
 function add(a, b) {
     return a + b
 }
 
-var userInput1 = prompt('Please type a number!')
-var number1 = Number(userInput1)
-
-var userInput2 = prompt('Please type second number!')
-var number2 = Number(userInput2)
-
-var sum = add(number1, number2)
-
-if (sum) {
-
-    alert('The result is: ' + sum)
-
-} else {
-
-    if (sum === 0) {
-        alert('The result is: ' + sum)
-    } else {
-        alert('Sorry, you provided not a number!')
-    }
-
+// named function expressions
+var addExpression = function addExpression(a, b) {
+    return a + b
 }
+
+// anonymous function expressions
+var addAnonymousExpression = function (a, b) {
+    return a + b
+}
+
+var func1 = function namedFunction(a, b) {
+    return a + b
+}
+var func2 = func1
+
+console.log(func1)
+console.log(func2)
+console.log(func1 === func2)
+
+var func3 = function (a, b) {
+    return a + b
+}
+var func4 = func3
+
+console.log(func3)
+console.log(func4)
+console.log(func3 === func4)
+
+// this throw ReferenceError
+// because name of named functions
+// is not available in global scope
+// so it is commented
+// console.log(namedFunction)
+
+// typeof event when variable is never defined
+// it returns undefined not ReferenceError
+console.log(typeof namedFunction)
+
+var namedFunctionVariable = function nameOfFunc(){
+    // named function name is available in local
+    // scope of that function, not in scopes above like global
+    console.log(nameOfFunc)
+}
+
+console.log(typeof nameOfFunc) // undefined
+
+// it logs function by name
+namedFunctionVariable()
