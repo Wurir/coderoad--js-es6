@@ -1,41 +1,48 @@
 'use strict'
 
-;(function () {
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-    var numbersAmount = 2
+for (var i = 0; i < numbers.length; i++) {
+    console.log('#1 - Sart of iteration no.: ' + i)
 
-    function add(x, y) {
-        return x + y
+    var number = numbers[i]
+
+    if (number < 6) {
+        console.log(number)
     }
-    function showResult(sum) {
-        if (sum) {
+}
 
-            alert('The result is: ' + sum)
 
-        } else {
+for (var j = 0; j < numbers.length; j++) {
+    console.log('#2 - Sart of iteration no.: ' + j)
 
-            if (sum === 0) {
-                alert('The result is: ' + sum)
-            } else {
-                alert('Sorry, you provided not a number!')
-            }
+    var number = numbers[j]
 
-        }
+    if (number < 6) {
+        console.log(number)
+    } else {
+        break
     }
-    function getNumberFromUser() {
-        var userInput = prompt('Please type a number!')
-        var number = Number(userInput)
+}
 
-        return number
+for (var k = 0; k < numbers.length; k++) {
+    console.log('#3 - Sart of iteration no.: ' + k)
+
+    var number = numbers[k]
+
+    if (number % 2 !== 0) {
+        console.log(number)
     }
+}
 
-    var result = 0
+for (var l = 0; l < numbers.length; l++) {
+    console.log('#4 - Sart of iteration no.: ' + l)
 
-    for (var i = 0; i < numbersAmount; i++) {
-        var number = getNumberFromUser()
-        result = add(result, number)
+    var number = numbers[l]
+
+    if (number % 2 === 0) {
+        continue
     }
-
-    showResult(result)
-
-})()
+    
+    console.log(number)
+}
