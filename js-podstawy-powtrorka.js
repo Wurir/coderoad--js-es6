@@ -1,20 +1,25 @@
 'use strict'
 
-var text = 'Hello, times: '
-var endIncrement = 3
+var names = ['Ala', 'Ola', 'Ela', 'Iza', 'Ada']
+var numbers = [1, 2, 3, 4, 5, 123]
 
-for (var i = 0; i < endIncrement; i = i + 1){
-    console.log(text + (i + 1))
+console.log(names[0])
+console.log(names[1])
+console.log(names[2]) // 2 < 3 so 2 < names.length
+
+for (var i = 0; i < names.length; i++) {
+    console.log(
+        'For loop iteration no.: ' +
+        (i + 1) +
+        ' ' +
+        names[i]
+    )
 }
 
-for (var j = 0; j < endIncrement; j++){
-    console.log(text + (j + 1))
+var sum = 0
+
+for (var j = 0; j < numbers.length; j++){
+    sum = sum + numbers[j]
 }
 
-for (var d = endIncrement; d > 0; d = d - 1){
-    console.log(text + d)
-}
-
-for (var decrement = endIncrement; decrement > 0; decrement--){
-    console.log(text + decrement)
-}
+console.log('Sum of all numbers is: ' + sum)
