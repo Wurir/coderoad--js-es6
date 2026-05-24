@@ -1,48 +1,70 @@
 'use strict'
 
-var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+var num1 = 1
+var num2 = 2
 
-for (var i = 0; i < numbers.length; i++) {
-    console.log('#1 - Sart of iteration no.: ' + i)
+var operator = prompt('Please type on of +, -, *, /')
+// var operator = '/'
 
-    var number = numbers[i]
-
-    if (number < 6) {
-        console.log(number)
-    }
+function add(a, b) {
+    return a + b
 }
-
-
-for (var j = 0; j < numbers.length; j++) {
-    console.log('#2 - Sart of iteration no.: ' + j)
-
-    var number = numbers[j]
-
-    if (number < 6) {
-        console.log(number)
+function subtract(a, b) {
+    return a - b
+}
+function multiply(a, b) {
+    return a * b
+}
+function divide(a, b) {
+    return a / b
+}
+function displayError() {
+    alert('Wrong operator!')
+}
+function displayResult(result) {
+    alert('Result is: ' + result)
+}
+function displayInfo(error, result) {
+    if (error) {
+        displayError()
     } else {
+        displayResult(result)
+    }
+}
+
+var result = 0
+var error = false
+
+// if (operator === '+') {
+//     result = add(num1, num2)
+// } else if (operator === '-') {
+//     result = subtract(num1, num2)
+// } else if (operator === '*') {
+//     result = multiply(num1, num2)
+// } else if (operator === '/') {
+//     result = divide(num1, num2)
+// } else {
+//     error = true
+// }
+
+// this switch statement do same thing
+// as is-else statements above
+
+switch (operator) {
+    case '+':
+        result = add(num1, num2)
         break
-    }
+    case '-':
+        result = subtract(num1, num2)
+        break
+    case '*':
+        result = multiply(num1, num2)
+        break
+    case '/':
+        result = divide(num1, num2)
+        break
+    default:
+        error = true
 }
 
-for (var k = 0; k < numbers.length; k++) {
-    console.log('#3 - Sart of iteration no.: ' + k)
-
-    var number = numbers[k]
-
-    if (number % 2 !== 0) {
-        console.log(number)
-    }
-}
-
-for (var l = 0; l < numbers.length; l++) {
-    console.log('#4 - Sart of iteration no.: ' + l)
-
-    var number = numbers[l]
-
-    if (number % 2 === 0) {
-        continue
-    }
-    
-    console.log(number)
-}
+displayInfo(error, result)
