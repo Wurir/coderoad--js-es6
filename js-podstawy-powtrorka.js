@@ -1,33 +1,77 @@
 'use strict'
 
-// #1
+var startCalculator = (function () {
 
-// variables are declared first
-// before code execution
-// so it will have undefined value
-console.log(a)
+    function showResult(result) {
+        alert('Result is: ' + result)
+    }
+    function getNumberFormUser() {
+        var input = prompt('Type number!')
+        var number = Number(input)
 
-var a = 10
+        if (Number.isNaN(number)) {
+            return getNumberFormUser()
+        } else {
+            return number
+        }
+    }
+    function getOperatorFromUser() {
+        var input = prompt('Type operator (+, -, *, /)')
 
-// #2
+        switch (input) {
+            case '+':
+                return input
+            case '-':
+                return input
+            case '*':
+                return input
+            case '/':
+                return input
+            default:
+                return getOperatorFromUser()
+        }
+    }
+    function getConfirmationFromUser() {
+        return confirm('Do you want to proceed?')
+    }
 
-// function declarations 
-// are hoisted whole
-// so it works before declaration in code
-console.log(add(1, 3))
+    function calculate(operator, a, b) {
+        switch (operator) {
+            case '+':
+                return a + b
+            case '-':
+                return a - b
+            case '*':
+                return a * b
+            case '/':
+                return a / b
+        }
+    }
 
-function add(a, b) {
-    return a + b
-}
+    function getConfirmationFromUserAndProceed(result) {
+        var confirmation = getConfirmationFromUser()
 
-// #3
+        if (confirmation) {
+            mainLoop(result)
+        } else {
+            showResult(result)
+        }
+    }
+    function mainLoop(result) {
+        var operator = getOperatorFromUser()
+        var number = getNumberFormUser()
 
-// function expressions behave like
-// normal variables declarations
-// so it will have undefined value
-// and throw error because you cannot call undefined
-console.log(addExpression(1, 3))
+        var newResult = calculate(operator, result, number)
 
-var addExpression = function (a, b) {
-    return a + b
-}
+        getConfirmationFromUserAndProceed(newResult)
+    }
+
+    function start() {
+        var result = getNumberFormUser()
+
+        getConfirmationFromUserAndProceed(result)
+    }
+
+    return start
+
+})()
