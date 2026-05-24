@@ -1,70 +1,33 @@
 'use strict'
 
-var num1 = 1
-var num2 = 2
+// #1
 
-var operator = prompt('Please type on of +, -, *, /')
-// var operator = '/'
+// variables are declared first
+// before code execution
+// so it will have undefined value
+console.log(a)
+
+var a = 10
+
+// #2
+
+// function declarations 
+// are hoisted whole
+// so it works before declaration in code
+console.log(add(1, 3))
 
 function add(a, b) {
     return a + b
 }
-function subtract(a, b) {
-    return a - b
-}
-function multiply(a, b) {
-    return a * b
-}
-function divide(a, b) {
-    return a / b
-}
-function displayError() {
-    alert('Wrong operator!')
-}
-function displayResult(result) {
-    alert('Result is: ' + result)
-}
-function displayInfo(error, result) {
-    if (error) {
-        displayError()
-    } else {
-        displayResult(result)
-    }
-}
 
-var result = 0
-var error = false
+// #3
 
-// if (operator === '+') {
-//     result = add(num1, num2)
-// } else if (operator === '-') {
-//     result = subtract(num1, num2)
-// } else if (operator === '*') {
-//     result = multiply(num1, num2)
-// } else if (operator === '/') {
-//     result = divide(num1, num2)
-// } else {
-//     error = true
-// }
+// function expressions behave like
+// normal variables declarations
+// so it will have undefined value
+// and throw error because you cannot call undefined
+console.log(addExpression(1, 3))
 
-// this switch statement do same thing
-// as is-else statements above
-
-switch (operator) {
-    case '+':
-        result = add(num1, num2)
-        break
-    case '-':
-        result = subtract(num1, num2)
-        break
-    case '*':
-        result = multiply(num1, num2)
-        break
-    case '/':
-        result = divide(num1, num2)
-        break
-    default:
-        error = true
+var addExpression = function (a, b) {
+    return a + b
 }
-
-displayInfo(error, result)
