@@ -1,27 +1,26 @@
-const makeCounter = function (name) {
-    return {
-        name: name,
-        number: 0,
-        inc: makeCounter.inc,
-        status: makeCounter.status,
-    }
-}
-
-// this is not the best solution
-// constructor functions are better
-makeCounter.inc = function () {
+const inc = function () {
     this.number = this.number + 1
 }
-makeCounter.status = function () {
+
+const status = function () {
     console.log('Current number is: ' + this.number)
     return this.number
 }
 
+// constructor function
+const Counter = function (name) { 
+    // this points at newly created  empty object
+    // when is used with new keyword
+    this.name = name
+    this.number = 0 
+    this.inc = inc
+    this.status = status
+}
 
-const counter1 = makeCounter('counter1')
-const counter2 = makeCounter('counter2')
-const counter3 = makeCounter('counter3')
-const counter4 = makeCounter('counter4')
+const counter1 = new Counter('counter1')
+const counter2 = new Counter('counter2')
+const counter3 = new Counter('counter3')
+const counter4 = new Counter('counter4')
 
 counter1.inc()
 counter2.inc()
