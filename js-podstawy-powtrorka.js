@@ -1,77 +1,21 @@
-'use strict'
+const makeCounter = function () {
 
-var startCalculator = (function () {
+    let number = 0
 
-    function showResult(result) {
-        alert('Result is: ' + result)
-    }
-    function getNumberFormUser() {
-        var input = prompt('Type number!')
-        var number = Number(input)
-
-        if (Number.isNaN(number)) {
-            return getNumberFormUser()
-        } else {
-            return number
-        }
-    }
-    function getOperatorFromUser() {
-        var input = prompt('Type operator (+, -, *, /)')
-
-        switch (input) {
-            case '+':
-                return input
-            case '-':
-                return input
-            case '*':
-                return input
-            case '/':
-                return input
-            default:
-                return getOperatorFromUser()
-        }
-    }
-    function getConfirmationFromUser() {
-        return confirm('Do you want to proceed?')
+    const inc = function () {
+        number = number + 1
     }
 
-    function calculate(operator, a, b) {
-        switch (operator) {
-            case '+':
-                return a + b
-            case '-':
-                return a - b
-            case '*':
-                return a * b
-            case '/':
-                return a / b
-        }
+    const status = function () {
+        console.log('Current number is: ' + number)
     }
 
-    function getConfirmationFromUserAndProceed(result) {
-        var confirmation = getConfirmationFromUser()
-
-        if (confirmation) {
-            mainLoop(result)
-        } else {
-            showResult(result)
-        }
-    }
-    function mainLoop(result) {
-        var operator = getOperatorFromUser()
-        var number = getNumberFormUser()
-
-        var newResult = calculate(operator, result, number)
-
-        getConfirmationFromUserAndProceed(newResult)
+    return {
+        inc: inc,
+        status: status,
     }
 
-    function start() {
-        var result = getNumberFormUser()
+}
 
-        getConfirmationFromUserAndProceed(result)
-    }
-
-    return start
-
-})()
+const counter1 = makeCounter()
+const counter2 = makeCounter()
