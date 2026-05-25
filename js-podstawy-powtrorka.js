@@ -1,34 +1,23 @@
-const base = {
-    toString: function () {
-        let string = ''
-        for (const property in this) {
-            const value = this[property]
-            if (typeof value === 'function') continue
-            string = string + value + ' '
-        }
-        return string.slice(0, -1)
-    }
+// 1. creates new object
+// 2. sets prototype of that object to prototype property of the constructor function
+// 3. calls the constructor function in context of newly created object (1.)
+// 4. return this object
+
+const Person = function (name) {
+    this.name = name
 }
 
-const obj0 = { name: 'Mateusz' }
-const obj1 = Object.create(base)
-obj1.name = 'Mateusz'
+Person.prototype.sayMyName = function () {
+    console.log(this.name)
+}
 
-console.log(obj0.__proto__ === Object.prototype)
-console.log(obj1.__proto__ === Object.prototype)
-console.log(obj1.__proto__ === base)
-console.log(obj1.__proto__.__proto__ === Object.prototype)
+const myOwnNew = function (constructorFunction, args) {
+    // 1. & 2.
+    const newObject = Object.create(constructorFunction.prototype)
 
-console.log('Hello ' + obj0)
-console.log('Hello ' + obj1)
+    // 3.
+    constructorFunction.apply(newObject, args)
 
-const obj2 = Object.create(obj1)
-
-const normalObj = Object.create({})
-const nullObj = Object.create(null)
-
-normalObj.name = 'Mateusz'
-nullObj.name = 'Mateusz'
-
-console.log('Hello ' + normalObj)
-console.log('Hello ' + nullObj)
+    // 4. 
+    return newObject
+}
