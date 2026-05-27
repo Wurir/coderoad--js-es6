@@ -10,11 +10,14 @@
     "url": "git+https://github.com/Wurir/coderoad--js-es6.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wurir",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Wurir/coderoad--js-es6/issues"
   },
   "homepage": "https://github.com/Wurir/coderoad--js-es6#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.18.1"
+  }
 }
