@@ -9,8 +9,11 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        port: 3000
+        static: {
+            directory: path.join(__dirname, "public"),
+        },
+        compress: true,
+        port: 3000,
     },
     plugins: [new HtmlWebpackPlugin({
         template: 'index.html'
