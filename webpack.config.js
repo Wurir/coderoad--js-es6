@@ -9,11 +9,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     devServer: {
-        static: {
-            directory: path.join(__dirname, "public"),
-        },
-        compress: true,
         port: 3000,
+        static: {
+            directory: path.join(__dirname, 'twój_folder'),
+        },
+        client: {
+            overlay: true,
+        },
+        allowedHosts: '...',
     },
     plugins: [new HtmlWebpackPlugin({
         template: 'index.html'
