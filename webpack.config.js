@@ -12,7 +12,7 @@ module.exports = {
     devServer: {
         port: 3000,
         static: {
-            directory: path.join(__dirname, 'twój_folder'),
+            directory: path.join(__dirname, 'dist'),
         },
         client: {
             overlay: true,
@@ -34,6 +34,14 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                  {
+                    loader: 'file-loader',
+                  },
+                ],
             },
         ],
     },

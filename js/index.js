@@ -1,4 +1,4 @@
 import './custom.js'
-import'./lodash.js'
+import './lodash.js'
+import './logo.js'
 
-console.log('dev server updates')
