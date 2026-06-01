@@ -1,4 +1,4 @@
-import logo from '../img/js-logo.png'
+import logo from '../public/img/js-logo.png'
 
 
 const img = document.createElement('img')

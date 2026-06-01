@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = {
     mode: 'production',
-    entry: './js/index.js',
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.[hash].js'
@@ -25,7 +25,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: './css', to: './css' },
+                { from: './public', to: './' },
             ],
         }),
     ],
