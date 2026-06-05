@@ -1,21 +1,31 @@
-const me = {
-    name: 'Mateusz',
+const numbers1 = [1, 2, 3]
+const numbers2 = [4, 5, 6]
+
+const numbers = [...numbers1, ...numbers2]
+
+console.log(numbers)
+
+const add = (a = 0, b = 0) => a + b
+
+console.log(add())
+
+// const logAllArgs = function () {
+//     for (let index = 0; index < arguments.length; index++) {
+//         console.log(arguments[index])
+//     }
+// }
+
+const logAllArgs = (...args) => args.forEach((arg) => console.log(arg))
+
+logAllArgs(1, 2, 'Ala', [1, 2])
+
+const logAllArgsAndHighlightFirst = (firstArg, ...restOfArgs) => {
+    console.log('This is first arg', firstArg)
+    logAllArgs(...restOfArgs)
 }
 
-const { name: firstName } = me
+logAllArgsAndHighlightFirst({ a: 1 }, { b: 2 }, 3, 4)
 
-console.log(firstName)
+const minValOfArray = (arr) => Math.min(...arr)
 
-const createPerson = (name) => {
-    return { name }
-}
-
-const Person = function (name) {
-    this.name = name
-}
-
-const { name: person1Name } = createPerson('Ola')
-const { name: person2Name } = new Person('Ala')
-
-console.log(person1Name)
-console.log(person2Name)
+console.log(minValOfArray([-1, 0, 2, -100]))
