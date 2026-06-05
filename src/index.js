@@ -1,35 +1,21 @@
-// const firstName = 'Bartek'
-// const lastName = 'Bogdanowicz'
-
-// const me = { firstName, lastName }
-
-// console.log(me)
-
 const me = {
-    firstName: 'Bartek',
-    lastName: 'Bogdanowicz',
-    car: {
-        brand: 'Opel',
-        model: 'Insignia',
-    },
+    name: 'Mateusz',
 }
 
-// const firstName = me.firstName
-// const lastName = me.lastName
-// const notExistingProp = me.notExistingProp
-
-const {
-    firstName,
-    lastName,
-    notExistingProp,
-} = me
-
-// const { car } = me
-// const { brand } = car
-
-const { car: { brand } } = me
+const { name: firstName } = me
 
 console.log(firstName)
-console.log(lastName)
-console.log(notExistingProp)
-console.log(brand)
+
+const createPerson = (name) => {
+    return { name }
+}
+
+const Person = function (name) {
+    this.name = name
+}
+
+const { name: person1Name } = createPerson('Ola')
+const { name: person2Name } = new Person('Ala')
+
+console.log(person1Name)
+console.log(person2Name)
