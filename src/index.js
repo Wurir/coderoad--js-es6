@@ -1,13 +1,17 @@
-console.group('Transpiled module')
-console.log(this)
-console.log(globalThis)
-console.log(window)
+const me = {
+    name: 'Bartek',
+    car: {
+        brand: 'Toyota',
+    },
+}
 
-;(() => {
-    const window = {}
-    console.log(window)
-    console.log(this)
-    console.log(globalThis)
-})()
+console.log(me.name)
+console.log(me.lastName)
 
-console.groupEnd('Transpiled module')
+console.log(me.car)
+console.log(me.car.brand)
+console.log(me.car.model)
+
+console.log(me.boat)
+console.log(me.boat && me.boat.brand)
+console.log(me.boat?.brand)
