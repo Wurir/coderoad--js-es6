@@ -1,24 +1,31 @@
-const string1 = 'Ala ma kota'
-const string2 = 'Ala\nma kota'
-// multiline strings
-const string3 = (
-    `Ala
-    ma kota`
-)
+// const name1 = 'Ola'
+// const name2 = 'Ala'
+// const name3 = 'Ela'
 
-console.log(string1)
-console.log(string2)
-console.log(string3)
+// const names = [name1, name2, name3]
 
-const name = 'Ola'
-const animal = 'psa'
+// console.log(names)
+// console.log(name1)
+// console.log(name2)
+// console.log(name3)
 
-const string4 = name + ' ma ' + animal
-const string5 = `${name} ma ${animal}`
+const names = ['Ala', 'Ola', 'Ela']
 
-console.log(string4)
-console.log(string5)
+// const name1 = names[0]
+// const name2 = names[1]
+// const name3 = names[2]
 
-const string6 = `The result of 2 + 2 is ${2 + 2}`
+const [name1, name2, name3] = names
 
-console.log(string6)
+console.log(names)
+console.log(name1)
+console.log(name2)
+console.log(name3)
+
+const numbers = [1, 2, 3]
+
+// const three = numbers[2]
+
+const [, , three] = numbers
+
+console.log(three)
