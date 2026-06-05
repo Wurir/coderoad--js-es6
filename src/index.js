@@ -1,32 +1,35 @@
-const add = ([a, b]) => a + b
+// const firstName = 'Bartek'
+// const lastName = 'Bogdanowicz'
 
-const numbers = [1, 3]
+// const me = { firstName, lastName }
 
-console.log(add(numbers))
+// console.log(me)
 
 const me = {
-    name: 'Mateusz',
-    lastName: 'Choma',
+    firstName: 'Bartek',
+    lastName: 'Bogdanowicz',
+    car: {
+        brand: 'Opel',
+        model: 'Insignia',
+    },
 }
 
-const meEntries = Object.entries(me)
+// const firstName = me.firstName
+// const lastName = me.lastName
+// const notExistingProp = me.notExistingProp
 
-console.log(meEntries)
+const {
+    firstName,
+    lastName,
+    notExistingProp,
+} = me
 
-const meLowerCase = (
-    meEntries
-        .map(([key, value]) => {
-            return [key, value.toLowerCase()]
-        })
-        .reduce(
-            (r, [key, value]) => {
-                return {
-                    ...r,
-                    [key]: value,
-                }
-            },
-            {}
-        )
-)
+// const { car } = me
+// const { brand } = car
 
-console.log(meLowerCase)
+const { car: { brand } } = me
+
+console.log(firstName)
+console.log(lastName)
+console.log(notExistingProp)
+console.log(brand)
