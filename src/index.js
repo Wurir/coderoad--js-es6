@@ -1,31 +1,19 @@
-const numbers1 = [1, 2, 3]
-const numbers2 = [4, 5, 6]
+console.log(Number.EPSILON)
+console.log(Number.isNaN(NaN))
+console.log(Number.isInteger(1.2))
 
-const numbers = [...numbers1, ...numbers2]
+console.log('ha'.repeat(10))
+console.log('ha'.includes('h'))
 
-console.log(numbers)
-
-const add = (a = 0, b = 0) => a + b
-
-console.log(add())
-
-// const logAllArgs = function () {
-//     for (let index = 0; index < arguments.length; index++) {
-//         console.log(arguments[index])
-//     }
-// }
-
-const logAllArgs = (...args) => args.forEach((arg) => console.log(arg))
-
-logAllArgs(1, 2, 'Ala', [1, 2])
-
-const logAllArgsAndHighlightFirst = (firstArg, ...restOfArgs) => {
-    console.log('This is first arg', firstArg)
-    logAllArgs(...restOfArgs)
+const listAllArgs = function () {
+    console.log(arguments)
+    console.log(Array.from(arguments))
+    Array.from(arguments).forEach((arg) => console.log(arg))
 }
 
-logAllArgsAndHighlightFirst({ a: 1 }, { b: 2 }, 3, 4)
+listAllArgs(1, 2, 3)
 
-const minValOfArray = (arr) => Math.min(...arr)
+console.log(Array.of(5))
+console.log(Array.of(1, 2, 3, 4, 5))
 
-console.log(minValOfArray([-1, 0, 2, -100]))
+console.log((new Array(100)).fill(1))
