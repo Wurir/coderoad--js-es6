@@ -17,6 +17,7 @@ module.exports = {
         },
         client: {
             overlay: true,
+            logging: 'warn'
         },
         allowedHosts: '...',
     },
