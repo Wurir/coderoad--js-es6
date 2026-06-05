@@ -1,19 +1,39 @@
-console.log(Number.EPSILON)
-console.log(Number.isNaN(NaN))
-console.log(Number.isInteger(1.2))
+const arr = ['a', 'b', ['c', 'd']]
+const flattened = arr.flat()
 
-console.log('ha'.repeat(10))
-console.log('ha'.includes('h'))
+console.log(flattened)
 
-const listAllArgs = function () {
-    console.log(arguments)
-    console.log(Array.from(arguments))
-    Array.from(arguments).forEach((arg) => console.log(arg))
-}
+const me = { name: 'Bartek', lastName: 'Bogdanowicz' }
 
-listAllArgs(1, 2, 3)
+const meEntries = Object.entries(me)
 
-console.log(Array.of(5))
-console.log(Array.of(1, 2, 3, 4, 5))
+console.log(meEntries)
 
-console.log((new Array(100)).fill(1))
+const meEntriesLowerCase = meEntries.map(([key, val]) => {
+    return [key, val.toLowerCase()]
+})
+
+console.log(meEntriesLowerCase)
+
+const meLowerCase = Object.fromEntries(meEntriesLowerCase)
+
+console.log(meLowerCase)
+
+const greetings = '   Hi Bartek!   '
+console.log(greetings.trim())
+console.log(greetings.trimStart())
+console.log(greetings.trimEnd())
+
+const doggos = [
+    { name: 'Abby', rating: 12 },
+    { name: 'Bandit', rating: 13 },
+    { name: 'Choco', rating: 14 },
+    { name: 'Daisy', rating: 12 },
+    { name: 'Elmo', rating: 12 },
+    { name: 'Falco', rating: 13 },
+    { name: 'Ghost', rating: 14 },
+]
+
+const doggosSorted = doggos.sort((a, b) => b.rating - a.rating)
+
+console.log(doggosSorted)
