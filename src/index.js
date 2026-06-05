@@ -1,31 +1,32 @@
-// const name1 = 'Ola'
-// const name2 = 'Ala'
-// const name3 = 'Ela'
+const add = ([a, b]) => a + b
 
-// const names = [name1, name2, name3]
+const numbers = [1, 3]
 
-// console.log(names)
-// console.log(name1)
-// console.log(name2)
-// console.log(name3)
+console.log(add(numbers))
 
-const names = ['Ala', 'Ola', 'Ela']
+const me = {
+    name: 'Mateusz',
+    lastName: 'Choma',
+}
 
-// const name1 = names[0]
-// const name2 = names[1]
-// const name3 = names[2]
+const meEntries = Object.entries(me)
 
-const [name1, name2, name3] = names
+console.log(meEntries)
 
-console.log(names)
-console.log(name1)
-console.log(name2)
-console.log(name3)
+const meLowerCase = (
+    meEntries
+        .map(([key, value]) => {
+            return [key, value.toLowerCase()]
+        })
+        .reduce(
+            (r, [key, value]) => {
+                return {
+                    ...r,
+                    [key]: value,
+                }
+            },
+            {}
+        )
+)
 
-const numbers = [1, 2, 3]
-
-// const three = numbers[2]
-
-const [, , three] = numbers
-
-console.log(three)
+console.log(meLowerCase)
